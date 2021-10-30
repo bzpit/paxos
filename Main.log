@@ -1,0 +1,9 @@
+INFO:11个Proposer, 11个Acceptor准备进行Paxos
+每个Proposer独立线程，Acceptor不需要线程
+Proposer线程中等待随机时间:表示与Acceptor的通信时间
+Proposer线程中调用Acceptor.Proposed()表示拿到了Propose请求结果
+Proposer线程中调用Acceptor.Accepted()表示拿到了Accept请求结果
+Proposer被批准后结束线程,其它线程继续投票最终，全部批准相同的值，达成一致。
+
+
+INFO:Paxos开始
